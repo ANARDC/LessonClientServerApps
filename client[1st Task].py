@@ -24,7 +24,7 @@ def hosts_parsing(start_host, end_host):
         sock.close()
 
 
-# Тут сначала первый поток работает, потом как первый заканчивает запускается второй
+# Тут сначала первый поток работает, потом, как первый заканчивает, запускается второй
 t = threading.Thread(target=hosts_parsing, args=(1, 501))
 t.start()
 while t.is_alive() is True:
